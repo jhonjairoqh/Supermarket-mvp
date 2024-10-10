@@ -31,18 +31,20 @@
             panel1 = new Panel();
             BtnPayMode = new Button();
             pictureBox1 = new PictureBox();
+            BtnExit = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(BtnExit);
             panel1.Controls.Add(BtnPayMode);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 556);
+            panel1.Size = new Size(231, 556);
             panel1.TabIndex = 0;
             // 
             // BtnPayMode
@@ -60,10 +62,20 @@
             pictureBox1.Image = Properties.Resources.sell;
             pictureBox1.Location = new Point(3, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(247, 97);
+            pictureBox1.Size = new Size(228, 97);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // BtnExit
+            // 
+            BtnExit.BackgroundImage = Properties.Resources.salida;
+            BtnExit.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnExit.Location = new Point(28, 450);
+            BtnExit.Name = "BtnExit";
+            BtnExit.Size = new Size(167, 94);
+            BtnExit.TabIndex = 2;
+            BtnExit.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
@@ -71,9 +83,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(879, 556);
             Controls.Add(panel1);
+            IsMdiContainer = true;
             Name = "MainView";
             Text = "Supermarket";
             WindowState = FormWindowState.Maximized;
+            Load += MainView_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -84,5 +98,6 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Button BtnPayMode;
+        private Button BtnExit;
     }
 }

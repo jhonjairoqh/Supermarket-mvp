@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Supermarket_mvp.Views
 {
-    public partial class PayModeView : Form, IPayModeView 
+    public partial class PayModeView : Form, IPayModeView
     {
         private bool isEdit;
         private bool isSuccessful;
@@ -22,6 +22,7 @@ namespace Supermarket_mvp.Views
             AssociateAndRaiseViewEvents();
 
             tabControl1.TabPages.Remove(tabPagePayModeDetail);
+            BtnClose.Click += delegate{ this.Close(); };
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -37,31 +38,38 @@ namespace Supermarket_mvp.Views
             };
         }
 
-        public string PayModeId {
+        public string PayModeId
+        {
             get { return TxtPayModeId.Text; }
             set { TxtPayModeId.Text = value; }
         }
-        public string PayModeName {
+        public string PayModeName
+        {
             get { return TxtPayModeName.Text; }
             set { TxtPayModeName.Text = value; }
         }
-        public string PayModeObservation {
+        public string PayModeObservation
+        {
             get { return TxtPayModeObservation.Text; }
             set { TxtPayModeObservation.Text = value; }
         }
-        public string SearchValue {
+        public string SearchValue
+        {
             get { return TxtSearch.Text; }
             set { TxtSearch.Text = value; }
         }
-        public bool IsEdit {
+        public bool IsEdit
+        {
             get { return isEdit; }
             set { isEdit = value; }
         }
-        public bool IsSuccessful {
+        public bool IsSuccessful
+        {
             get { return isSuccessful; }
             set { isSuccessful = value; }
         }
-        public string Message {
+        public string Message
+        {
             get { return message; }
             set { message = value; }
         }
@@ -89,11 +97,15 @@ namespace Supermarket_mvp.Views
         }
         private static PayModeView instance;
 
-        public static PayModeView GetInstance()
+        public static PayModeView GetInstance(Form ParentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
                 instance = new PayModeView();
+                instance.MdiParent = ParentContainer;
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
             }
             else
             {
@@ -104,6 +116,11 @@ namespace Supermarket_mvp.Views
                 instance.BringToFront();
             }
             return instance;
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
