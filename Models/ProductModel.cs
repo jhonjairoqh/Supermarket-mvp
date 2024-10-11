@@ -10,7 +10,7 @@ namespace Supermarket_mvp.Models
 {
     internal class ProductModel
     {
-        public int Id { get; set; }
+        public int ProductId { get; set; }
 
         [DisplayName("Product Name")]
         [Required(ErrorMessage = "Product name is required")]
@@ -19,17 +19,16 @@ namespace Supermarket_mvp.Models
 
         [DisplayName("Price")]
         [Required(ErrorMessage = "Product Price is required")]
-        [StringLength(200, MinimumLength = 3, ErrorMessage = "Product Price must be between 3 and 200 characters")]
-        public string Price { get; set; }
+        [Range(0, 9999.99, ErrorMessage = "Price must be between 0 and 9999.99")]
+        public decimal Price { get; set; }  
 
         [DisplayName("Stock")]
         [Required(ErrorMessage = "Product Stock is required")]
-        [StringLength(200, MinimumLength = 3, ErrorMessage = "Product Stock must be between 3 and 200 characters")]
-        public string Stock { get; set; }
+        [Range(1, int.MaxValue, ErrorMessage = "Stock must be at least 1")]
+        public int Stock { get; set; }  
 
-        [DisplayName("Category_Id")]
-        [Required(ErrorMessage = "Product Category_Id  is required")]
-        [StringLength(200, MinimumLength = 3, ErrorMessage = "Product Category_Id must be between 3 and 200 characters")]
-        public string Category_Id { get; set; }
+        [DisplayName("Category Id")]
+        [Required(ErrorMessage = "Category Id is required")]
+        public int Category_Id { get; set; }
     }
 }
