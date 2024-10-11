@@ -66,3 +66,4 @@ C:\Users\jhonj\source\repos\Supermarket-mvp\Supermarket-mvp\bin\Debug\net8.0-win
 C:\Users\jhonj\source\repos\Supermarket-mvp\Supermarket-mvp\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\jhonj\source\repos\Supermarket-mvp\Supermarket-mvp\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
 C:\Users\jhonj\source\repos\Supermarket-mvp\Supermarket-mvp\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\jhonj\source\repos\Supermarket-mvp\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket_mvp.Views.ProductView.resources

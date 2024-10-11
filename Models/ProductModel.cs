@@ -10,7 +10,7 @@ namespace Supermarket_mvp.Models
 {
     internal class ProductModel
     {
-        public int ProductId { get; set; }
+        public int Id { get; set; }
 
         [DisplayName("Product Name")]
         [Required(ErrorMessage = "Product name is required")]
@@ -29,6 +29,6 @@ namespace Supermarket_mvp.Models
 
         [DisplayName("Category Id")]
         [Required(ErrorMessage = "Category Id is required")]
-        public int Category_Id { get; set; }
+        public int CategoryId { get; set; }
     }
 }

@@ -126,7 +126,7 @@ namespace Supermarket_mvp.Views
             get { return message; }
             set { message = value; }
         }
-       
+
 
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
